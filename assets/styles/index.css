@@ -1,0 +1,572 @@
+@charset "utf-8";
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&display=swap");
+@import url("https://webfontworld.github.io/lotte/GhanaChocolate.css");
+
+/* 
+font-family: "Pretendard Variable", Pretendard, -apple-system,
+BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+"Apple SD Gothic Neo", "Malgun Gothic", sans-serif; 
+font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+font-family: 'GhanaChocolate', "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+*/
+
+.wrap {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: white;
+}
+.container {
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background: #272c38 url(../images/noise.png);
+  animation: noise 0.3s linear infinite;
+}
+header {
+  width: 100%;
+  height: 100px;
+  padding: 20px 50px;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  background: #272c38 url(../images/noise.png);
+  animation: noise 0.3s linear infinite;
+}
+.header-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: url(../images/pointer.svg) 10 10, auto;
+}
+header img {
+  width: 180px;
+}
+.start-text-wrapper {
+  height: calc(100% - 100px);
+  position: relative;
+  margin: 0 4%;
+  display: flex;
+  flex-direction: column;
+}
+.start-text-wrapper img {
+  margin: 8px 0;
+}
+.start-text-wrapper .depa-wrapper {
+  width: 420px;
+  height: 200px;
+  transition: 1s cubic-bezier(0.83, 0, 0.17, 1);
+  margin: 10px 0;
+}
+.start-text-wrapper .depa-wrapper.active {
+  width: 100%;
+}
+.start-text-wrapper .depa-wrapper img {
+  object-fit: cover;
+  object-position: left center;
+}
+.start-text-wrapper img:nth-child(odd),
+.start-text-wrapper .depa-wrapper {
+  align-self: flex-start;
+  height: 20vh;
+}
+.start-text-wrapper img:nth-child(even),
+.start-text-wrapper .start-illust {
+  align-self: flex-end;
+  height: 20vh;
+}
+.start-text-wrapper .start-illust {
+  width: 23vw;
+  height: 600px;
+  position: absolute;
+  top: 200px;
+  right: 10vw;
+}
+.start-text-wrapper .start-illust::after {
+  transition: 0.5s;
+}
+.start-text-wrapper .start-illust:hover::after {
+  content: "";
+  width: 35vw;
+  height: 34vw;
+  position: absolute;
+  top: -5px;
+  left: -88px;
+  background: url(../images/together.png) no-repeat 50% / contain;
+  opacity: 0.7;
+  transform: rotate(-8deg);
+}
+.start-text-wrapper .start-illust img {
+  width: 23vw;
+  height: fit-content;
+}
+
+.overview {
+  width: 100%;
+  padding: 300px 0;
+  background: url(../images/farm2.jpg);
+  animation: overview-ani 1.5s linear infinite;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.overview-text-wrapper {
+  width: 1300px;
+  margin: 0 300;
+  display: flex;
+  flex-direction: column;
+}
+.overview .overview-text-wrapper img:nth-child(1) {
+  align-self: start;
+  width: 1000px;
+  z-index: 10;
+}
+.overview .overview-text-wrapper img:nth-child(2) {
+  align-self: end;
+  width: 1200px;
+  z-index: 1000;
+}
+.overview > img:nth-child(2) {
+  position: absolute;
+  width: 600px;
+  transform: rotate(25deg) translate(-50%);
+  left: 50%;
+  top: 35%;
+  z-index: 100;
+}
+.overview > img:nth-child(3) {
+  position: absolute;
+  transform: rotate(15deg);
+  right: 150px;
+  top: 150px;
+  z-index: 0;
+}
+.overview > img:nth-child(4) {
+  position: absolute;
+  bottom: -50px;
+  left: 150px;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+.overview > img:last-child,
+.description > img {
+  position: absolute;
+  width: 120px;
+  bottom: 30px;
+  right: 30px;
+}
+.description {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 100px 200px;
+}
+.description .description-img-wrapper {
+  width: 600px;
+  position: relative;
+}
+.description .description-img-wrapper img:first-child {
+  width: 550px;
+  position: absolute;
+  left: -17%;
+  top: 30%;
+  transform: translateY(-43%) rotate(-15deg);
+  z-index: 10;
+  animation: strong infinite 2s 2s ease-in-out;
+}
+.description .description-img-wrapper img:nth-child(2) {
+  width: 550px;
+  position: absolute;
+  left: 14%;
+  top: 55%;
+  transform: translateY(-43%) rotate(15deg);
+  z-index: 10;
+  animation: strong2 infinite 2s 1s ease-in-out;
+}
+.description .description-img-wrapper img:nth-child(3) {
+  top: 30px;
+  width: 160px;
+  position: absolute;
+  left: 280px;
+  z-index: 0;
+}
+.description .description-img-wrapper img:nth-child(4) {
+  position: absolute;
+  bottom: 100px;
+  left: 24%;
+  z-index: 0;
+}
+.description .description-img-wrapper img:nth-child(5) {
+  width: 10vw;
+  position: absolute;
+  bottom: -70px;
+  left: 54%;
+  transform: rotate(-30deg);
+  z-index: 0;
+}
+.description > span {
+  font-size: 1.2vw;
+  font-weight: bold;
+  position: absolute;
+  bottom: 140px;
+  left: 36%;
+}
+.description .description-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "GhanaChocolate", "Apple SD Gothic Neo", "Malgun Gothic",
+    sans-serif;
+  margin: 60px 0 80px 50px;
+}
+.description .description-text-wrapper h3 {
+  min-width: 540px;
+  font-size: 2.2vw;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+.description .description-text-wrapper h3 span {
+  display: inline-block;
+  animation: wave 1.2s ease infinite alternate;
+}
+.description .description-text-wrapper h2 {
+  font-size: 6vw;
+  margin-bottom: 30px;
+}
+.description .description-text-wrapper h2 {
+  font-size: 5vw;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, #d0ff79, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.description .description-text-wrapper p {
+  width: fit-content;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 1.3vw;
+  font-weight: bold;
+  position: relative;
+}
+/* .description .description-text-wrapper p::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: url(../images/heart2.png) no-repeat 50% / cover;
+  position: absolute;
+  bottom: -10px;
+  right: -60px;
+} */
+.vinyl {
+  position: relative;
+  padding: 100px 0 50px;
+}
+.vinyl .background-text-wrapper,
+.sticker .background-text-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.vinyl .background-text-wrapper .background-text-list,
+.sticker .background-text-wrapper .background-text-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  line-height: 0.85;
+}
+.vinyl .background-text-wrapper .background-text-list .bg-text,
+.sticker .background-text-wrapper .background-text-list .bg-text {
+  display: flex;
+  font-size: 25vh;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  flex-shrink: 0;
+  animation: bg-text 100s linear infinite;
+  white-space: nowrap;
+}
+.vinyl .background-text-wrapper .background-text-list .bg-text {
+  color: #5aff4b;
+}
+.sticker .background-text-wrapper .background-text-list .bg-text {
+  color: #ff60b6;
+}
+.vinyl .background-text-wrapper .background-text-list .bg-text:nth-child(odd),
+.sticker
+  .background-text-wrapper
+  .background-text-list
+  .bg-text:nth-child(odd) {
+  animation-direction: reverse;
+}
+.vinyl-container {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -70%);
+  background: url(../images/vinyl.png) 50% 50% / cover;
+  width: 70%;
+  height: 70%;
+}
+.vinyl-container .potato {
+  position: absolute;
+  width: 45vh;
+  left: 180px;
+  top: 100px;
+}
+.vinyl-container .green-onion {
+  position: absolute;
+  width: 76vh;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%) scaleX(-1);
+}
+.vinyl-container .vinyl-text {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  width: 400px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+.vinyl-container .vinyl-text h4 {
+  font-size: 1.4rem;
+  margin: 8px 0;
+}
+.sticker {
+  position: relative;
+  padding: 100px 0 50px;
+}
+.sticker #stickerHere {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.sticker .sticker-contents img {
+  position: absolute;
+  cursor: grab;
+  z-index: 1000;
+  transform-origin: center center;
+}
+.sticker .sticker-contents img:first-child {
+  width: 600px;
+  top: 41%;
+  left: 32%;
+  transform: rotate(10deg);
+  animation: sticker 1s infinite alternate;
+}
+.juice {
+  top: 270px;
+  left: 13%;
+}
+.sweet-bread {
+  top: 200px;
+  left: 35%;
+}
+.cat {
+  width: 320px;
+  top: 200px;
+  right: 250px;
+}
+.color-logo {
+  bottom: 100px;
+  width: 300px;
+  left: 20%;
+}
+.potato-bread {
+  left: 42%;
+  bottom: 100px;
+}
+.other {
+  width: 350px;
+  bottom: 100px;
+  right: 150px;
+}
+.end {
+  padding: 100px 0px 50px;
+  position: relative;
+}
+.end .end-text-wrapper {
+  padding: 0 100px 50px;
+  border-bottom: 1px solid #fff;
+}
+.end .end-text-wrapper .depa-wrapper-second {
+  width: 0px;
+  height: 240px;
+  transition: 1.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+.end .end-text-wrapper .depa-wrapper-second img {
+  width: 100%;
+  height: 24vh;
+  object-fit: cover;
+  object-position: left center;
+}
+.end .end-text-wrapper .active {
+  width: 100%;
+}
+.end footer {
+  display: flex;
+  flex-direction: column;
+}
+.end footer .ft-upper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 40px;
+}
+.end footer .ft-upper-wrapper .logo-wrapper a {
+  position: absolute;
+  bottom: 0;
+}
+.end footer img {
+  height: 50px;
+}
+.end footer ul li {
+  width: 500px;
+  display: flex;
+  margin: 5px 0;
+}
+.end footer .ft-text-right ul li strong,
+.end footer .ft-text-left ul li:last-child strong {
+  display: block;
+  width: 130px;
+}
+.end footer .ft-my-wrapper {
+  align-self: center;
+}
+.end footer .ft-my-wrapper p {
+  text-align: center;
+  margin-top: 50px;
+}
+.end footer .ft-my-wrapper a {
+  display: block;
+  position: absolute;
+  right: 18%;
+  margin-top: 50px;
+}
+.end footer .ft-my-wrapper a::before {
+  content: "";
+  width: 160px;
+  height: 60px;
+  position: absolute;
+  top: -70px;
+  background: url(../images/arrow2.png) no-repeat 50% / contain;
+  animation: goMy 0.8s infinite linear alternate;
+}
+@keyframes goMy {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes noise {
+  0% {
+    background-position: 0 0;
+  }
+  19% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: -70px 2px;
+  }
+  39% {
+    background-position: -70px 2px;
+  }
+  40% {
+    background-position: 20px -105px;
+  }
+  59% {
+    background-position: 20px -105px;
+  }
+  60% {
+    background-position: -15px 10px;
+  }
+  79% {
+    background-position: -15px 10px;
+  }
+  80% {
+    background-position: 0px 51px;
+  }
+  99% {
+    background-position: 0px 51px;
+  }
+  100% {
+    background-position: 5px 0;
+  }
+}
+
+@keyframes overview-ani {
+  0% {
+    background-position: 0 10px;
+  }
+  25% {
+    background-position: 0 -20px;
+  }
+  50% {
+    background-position: 0 -50px;
+  }
+  75% {
+    background-position: 0 -80px;
+  }
+  100% {
+    background-position: 0 -110px;
+  }
+}
+
+@keyframes bg-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes strong {
+  50% {
+    transform: translateY(-38%) rotate(-15deg);
+  }
+}
+@keyframes strong2 {
+  50% {
+    transform: translateY(-38%) rotate(15deg);
+  }
+}
+@keyframes wave {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes sticker {
+  50% {
+    transform: rotate(5deg);
+  }
+}
